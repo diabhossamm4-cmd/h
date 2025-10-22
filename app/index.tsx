@@ -18,7 +18,7 @@ export default function Index() {
             router.replace("./intro"); // أول مرة
           }
           setLoading(false);
-        }, 7000); // وقت الـ Splash
+        }, 5000); // وقت الـ Splash
       } catch (e) {
         console.log("Error checking intro:", e);
         router.replace("./intro");
