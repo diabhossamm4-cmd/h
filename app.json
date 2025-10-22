@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "JAUDI",
+    "slug": "JAUDI",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/jaudii.png",
+    "scheme": "jaudi",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/jaudii.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#CCA884"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/jaudii.png",
+        "backgroundColor": "#CCA884"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.jaudi.app"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/jaudii.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/jaudii.png",
+          "imageWidth": 150,
+          "resizeMode": "contain",
+          "backgroundColor": "#CCA884"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "822dc2dd-1363-4c1d-b227-5789eb0c8096"
+      }
+    }
+  }
+}

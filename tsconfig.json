@@ -1,0 +1,18 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
+, "app/Register/Personal/Verify-Face.jsx", "app/(tabs)/home/_layout.tsx", "app/(tabs)/home/h.tsx", "app/final-intro.jsx", "app/intro.jsx", "app/(tabs)/_layout.jsx", "app/(tabs)/recipients/_layout.jsx"  ]
+}
