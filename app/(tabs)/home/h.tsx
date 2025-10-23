@@ -28,22 +28,7 @@ const c = {
   gray: "#6B7280",
   lightGray: "#F5F5F5",
   green: "#22C55E",
-};
-
-// const cards = [
-//   {
-//     title: "SECURE TRANSACTIONS",
-//     text: "Your financial security is our priority.\nTransfer with confidence every time.",
-//   },
-//   {
-//     title: "FAST TRANSFERS",
-//     text: "Send money instantly to anyone, anywhere in the world.",
-//   },
-//   {
-//     title: "LOW FEES",
-//     text: "Experience transparent pricing and minimal transaction costs.",
-//   },
-// ];
+}; 
 
 const stats = {
   balance: 815.69,
@@ -147,7 +132,7 @@ const TransactionRow = ({ tx }: any) => (
   </View>
 );
 const cardImages = [
-  // require("@/assets/images/jau.png"),
+  require("@/assets/images/jau.png"),
   require("@/assets/images/Back.png"),
   // require("@/assets/images/jau.png"),
 ];
@@ -214,16 +199,16 @@ export default function Dashboard() {
             {/* Balance */}
             <View className="px-6 mt-8 flex-row items-end justify-between">
               <View>
-                <Text className="text-gray-500 text-base font-regular">
+                <Text className="text-gray-500 text-sm font-regular">
                   Total Balance
                 </Text>
-                <Text className="text-[36px] font-bold text-black mt-1">
+                <Text className="text-2xl font-bold text-black mt-1">
                   {stats.balance}{" "}
-                  <Text className="text-lg font-regular">{stats.currency}</Text>
+                  <Text className="text-sm font-regular">{stats.currency}</Text>
                 </Text>
               </View>
               <View className="items-end">
-                <Text className="text-blue-600 font-medium">
+                <Text className="text-blue-600 font-medium text-base">
                   ↑ {stats.growth}
                 </Text>
                 <Text className="text-gray-500 font-regular text-sm">
@@ -238,67 +223,24 @@ export default function Dashboard() {
                 <Text className="text-gray-500 text-xs font-medium">
                   Money Sent (Last 30 days)
                 </Text>
-                <Text className="text-2xl font-bold text-black mt-1">
-                  {stats.moneySent} {stats.currency}
+                <Text className="text-xl font-bold text-black mt-1">
+                  {stats.moneySent}{" "}
+                  <Text className="text-sm font-regular">{stats.currency}</Text>
                 </Text>
               </View>
               <View className="items-end">
                 <Text className="text-gray-500 text-xs">
                   Transaction Created (Last 30 days){" "}
                 </Text>
-                <Text className="text-2xl font-bold text-black mt-1">
+                <Text className="text-xl font-bold text-black mt-1">
                   {stats.transactionsCount}{" "}
-                  <Text className="text-sm text-blue-600 font-semibold">
+                  <Text className="text-sm text-blue-600 font-regular">
                     +{stats.transactionGrowth}%
                   </Text>
                 </Text>
               </View>
             </View>
-
-            {/* Carousel
-            <View className="mt-10">
-              <Text className="px-6 text-2xl font-medium text-black">
-                Introducing Jaudi
-              </Text>
-              
-              <Carousel
-                width={width}
-                height={180}
-                autoPlay
-                data={cards}
-                scrollAnimationDuration={1000}
-                renderItem={({ item }) => (
-                  <View
-                    className="mx-4 mt-4 rounded-3xl p-6 flex-row items-center justify-between"
-                    style={{
-                      backgroundColor: "#F5F5F5",
-                      shadowColor: "#000",
-                      shadowOpacity: 0.05,
-                      shadowRadius: 5,
-                    }}
-                  >
-                    <View className="w-1/2">
-                      <Text className="text-lg font-bold text-black">
-                        {item.title}
-                      </Text>
-                      <Text className="text-base text-black mt-2">
-                        {item.text}
-                      </Text>
-                    </View>
-                    <View
-                      className="w-20 h-20 rounded-full items-center justify-center"
-                      style={{
-                        backgroundColor: c.brown,
-                        borderWidth: 2,
-                        borderColor: "black",
-                      }}
-                    >
-                      <Feather name="lock" size={32} color="black" />
-                    </View>
-                  </View>
-                )}
-              />
-            </View> */}
+            
 
             <View className="mt-10 align-middle">
               <Text className="px-6 text-2xl font-medium text-black">
@@ -322,7 +264,7 @@ export default function Dashboard() {
                       elevation: 4,
                     }}
                   >
-                    <Image 
+                    <Image
                       source={item}
                       style={{
                         width: "100%",

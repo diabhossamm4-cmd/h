@@ -102,6 +102,13 @@ export default function FinalIntro() {
           <Text className="text-base font-regular text-black">
             Set up Passcode / Biometrics
           </Text>
+        </TouchableOpacity><TouchableOpacity
+          className="w-full h-[50px] rounded-full border-2 border-[#E0D5C0] bg-[#fffcf5] items-center justify-center"
+          onPress={() => router.push("/r/t")} // تم تعديل المسار
+        >
+          <Text className="text-base font-regular text-black">
+            Set up Passcode / test
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
