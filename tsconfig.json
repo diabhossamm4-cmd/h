@@ -14,5 +14,5 @@
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
     "nativewind-env.d.ts"
-, "app/Register/Personal/Verify-Face.jsx", "app/(tabs)/home/_layout.tsx", "app/(tabs)/home/h.tsx", "app/final-intro.jsx", "app/intro.jsx", "app/(tabs)/_layout.tsx", "app/(tabs)/recipients/_layout.tsx"  ]
+, "app/Register/Personal/Verify-Face.jsx", "app/(tabs)/home/_layout.tsx", "app/(tabs)/home/h.tsx", "app/final-intro.jsx", "app/intro.jsx", "app/(tabs)/_layout.tsx", "app/(tabs)/recipients/_layout.tsx", "app/pages/setting/personalpage.tsx"  ]
 }

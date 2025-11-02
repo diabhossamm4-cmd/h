@@ -86,9 +86,11 @@ export default function Settings() {
         <SettingsRow
           title="Personal Details"
           icon={<ProfileIcon   size={30}   />}
-          // onPress={() => router.push("/settings/personal-details")}
+          onPress={() => router.push("/pages/setting/personalpage")}
+          // onPress={() => router.push("/")}
         />
-        <SettingsRow
+         
+         <SettingsRow
           title="Privacy & Security"
           icon={<RecipientIcon/>}
           // onPress={() => router.push("/settings/privacy-security")}

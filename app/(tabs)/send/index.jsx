@@ -2,7 +2,9 @@ import React from "react";
 import { View, Text, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function SendMoneyDetails() {
+export default function SendMoneyDetails(
+  props
+) { console.log(props);
   return (
     <SafeAreaView className="flex-1 bg-white">
       <ScrollView className="flex-1 px-5 pt-4" contentContainerClassName="pb-24">
