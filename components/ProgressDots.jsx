@@ -3,7 +3,7 @@ import { View } from "react-native";
 
 export default function ProgressDots({ stepsCount, currentStep }) {
   return (
-    <View className="flex-row items-center ml-[35px] mr-[25px]">
+    <View className="flex-row items-center ml-[25px] mr-[24px]">
       {Array.from({ length: stepsCount }).map((_, idx) => (
         <React.Fragment key={idx}>
           {/* Dot */}

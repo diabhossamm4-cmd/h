@@ -11,7 +11,7 @@ export default function TabsLayout() {
     >
       <Tabs.Screen name="home" />
       <Tabs.Screen name="recipients" />
-      <Tabs.Screen name="send" /> {/* الزرّ المركزي */}
+      <Tabs.Screen name="send" /> 
       <Tabs.Screen name="transactions" />
       <Tabs.Screen name="settings" />
     </Tabs>

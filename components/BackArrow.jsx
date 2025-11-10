@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { Path } from "react-native-svg";
 
-export default function BackArrow({ width = 32, height = 25, color = "#cca88499" }) {
+export default function BackArrow({ width = 30, height = 25, color = "#cca88499" }) {
   return (
     <Svg width={width} height={height} viewBox="0 0 32 25" fill="none">
       <Path

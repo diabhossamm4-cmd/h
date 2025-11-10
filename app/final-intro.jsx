@@ -1,6 +1,12 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
-import { Image, Text, TouchableOpacity, View, useWindowDimensions } from "react-native";
+import {
+  Image,
+  Text,
+  TouchableOpacity,
+  View,
+  useWindowDimensions,
+} from "react-native";
 
 export default function FinalIntro() {
   const router = useRouter();
@@ -23,12 +29,11 @@ export default function FinalIntro() {
   return (
     // تم تعديل الحاوية الرئيسية لتوسيط المحتوى بشكل صحيح
     <View className="flex-1 items-center justify-center bg-white px-5">
-      
       {/* البطاقة الرئيسية */}
       <View
         className="bg-[#E0E0E0] rounded-2xl p-5 relative mb-8 items-center justify-around"
         // الأبعاد الآن متجاوبة وتعتمد على حجم الشاشة
-        style={{ width: cardWidth, height: cardWidth * 1.4 }} 
+        style={{ width: cardWidth, height: cardWidth * 1.4 }}
       >
         <Text className="text-2xl font-bold text-center text-black px-4 mb-24">
           EASY BREEZY MONEY MANAGEMENT
@@ -44,7 +49,7 @@ export default function FinalIntro() {
             resizeMode: "contain",
           }}
         />
-                <Image
+        <Image
           source={require("@/assets/images/mony.png")}
           className="absolute mb-24"
           style={{
@@ -72,10 +77,7 @@ export default function FinalIntro() {
       </View>
 
       {/* حاوية الأزرار */}
-      <View
-        className="items-center"
-        style={{ width: buttonsContainerWidth }}
-      >
+      <View className="items-center" style={{ width: buttonsContainerWidth }}>
         {/* Register + Login */}
         <View className="flex-row justify-center w-full mb-4 gap-x-4">
           <TouchableOpacity
@@ -102,14 +104,15 @@ export default function FinalIntro() {
           <Text className="text-base font-regular text-black">
             Set up Passcode / Biometrics
           </Text>
-        </TouchableOpacity><TouchableOpacity
+        </TouchableOpacity>
+        {/* <TouchableOpacity
           className="w-full h-[50px] rounded-full border-2 border-[#E0D5C0] bg-[#fffcf5] items-center justify-center"
-          onPress={() => router.push("/r/t")} // تم تعديل المسار
+          onPress={() => router.push("/r/test")} // تم تعديل المسار
         >
           <Text className="text-base font-regular text-black">
             Set up Passcode / test
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     </View>
   );

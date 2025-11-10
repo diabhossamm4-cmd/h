@@ -8,10 +8,11 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Feather, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 import axios from "axios";
 import { useRouter } from "expo-router";
 import SearchIcon from "@/components/ui/SearchIcon";
+import CustomPinIcon from '@/components/pages/Exchangerates';
 
 // Transaction item data type
 interface TransactionItem {
@@ -77,9 +78,9 @@ export default function HelpCenter() {
       id: 1,
       label: "Exchange rates",
       icon: (
-        <MaterialCommunityIcons
+        <CustomPinIcon
           name="swap-horizontal-bold"
-          size={20}
+          size={3}
           color="#231F20"
         />
       ),
@@ -88,13 +89,53 @@ export default function HelpCenter() {
     {
       id: 2,
       label: "Verification & Setup",
-      icon: <Ionicons name="scan-outline" size={22} color="#231F20" />,
+      icon: <Feather name="user-check" size={28} color="#CCA885" />,
       route: "/help/verification",
     },
     {
       id: 3,
       label: "Failed Transactions",
-      icon: <Feather name="x-circle" size={22} color="#231F20" />,
+      icon: <Feather name="x" size={32} color="#000" />,
+      route: "/help/failed",
+    },{
+      id: 3,
+      label: "Failed Transactions",
+      icon: <Feather name="x" size={32} color="#000" />,
+      route: "/help/failed",
+    },{
+      id: 3,
+      label: "Failed Transactions",
+      icon: <Feather name="x" size={32} color="#000" />,
+      route: "/help/failed",
+    },{
+      id: 3,
+      label: "Failed Transactions",
+      icon: <Feather name="x" size={32} color="#000" />,
+      route: "/help/failed",
+    },{
+      id: 3,
+      label: "Failed Transactions",
+      icon: <Feather name="x" size={32} color="#000" />,
+      route: "/help/failed",
+    },{
+      id: 3,
+      label: "Failed Transactions",
+      icon: <Feather name="x" size={32} color="#000" />,
+      route: "/help/failed",
+    },{
+      id: 3,
+      label: "Failed Transactions",
+      icon: <Feather name="x" size={32} color="#000" />,
+      route: "/help/failed",
+    },{
+      id: 3,
+      label: "Failed Transactions",
+      icon: <Feather name="x" size={32} color="#000" />,
+      route: "/help/failed",
+    },{
+      id: 3,
+      label: "Failed Transactions",
+      icon: <Feather name="x" size={32} color="#000" />,
       route: "/help/failed",
     },
   ];
@@ -102,10 +143,11 @@ export default function HelpCenter() {
   return (
     <SafeAreaView className="flex-1 bg-white">
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View className="px-6 pt-5 pb-10">
+        <View className="px-6 pt-5 justify-center pb-10">
           {/* Close / Back Button */}
           <TouchableOpacity
             onPress={() => router.back()}
+            // onPress={() => router.push("/(tabs)/home/h")}
             className="mb-6 w-8 h-8 items-center justify-center"
           >
             {/* Using two rotated lines to mimic the Figma X icon */}
@@ -130,7 +172,7 @@ export default function HelpCenter() {
           </TouchableOpacity>
 
           {/* Heading */}
-          <Text className="text-[32px] font-bold text-black mb-5">
+          <Text className="text-4xl font-medium text-black mb-5">
             How can we help?
           </Text>
 
@@ -236,13 +278,22 @@ export default function HelpCenter() {
               </Text>
               <Feather name="chevron-right" size={22} color="#231F20" />
             </TouchableOpacity>
+            
           ))}
+
+          
+          {/* Spacer */}
+          <View className="flex-1 mb-9" />
+
+          {/* Divider */}
+          <View className="w-full h-[1px] justify-items-end  bg-gray-700 mb-6" />
+
 
           {/* Contact Support Button */}
           <TouchableOpacity
             // onPress={() => router.push("/help/contact-support")}
             className="mt-6 rounded-3xl px-4 py-4 items-center justify-center"
-            style={{ backgroundColor: "#CCA884" }}
+            style={{ backgroundColor: "#CCA88499" }}
           >
             <Text className="text-[16px] font-medium text-black">
               Contact Support
@@ -250,6 +301,25 @@ export default function HelpCenter() {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      
+          
+          {/* Spacer */}
+          <View className="flex-1 mb-2" />
+
+          {/* Divider */}
+          <View className="w-full h-[1px] justify-items-end  bg-gray-700 mb-4" />
+
+
+          {/* Contact Support Button */}
+          <TouchableOpacity
+            // onPress={() => router.push("/help/contact-support")}
+            className="mt-6 rounded-3xl px-4 py-4 mb-8 items-center justify-center"
+            style={{ backgroundColor: "#CCA88499" }}
+          >
+            <Text className="text-[16px] font-medium text-black">
+              Contact Support
+            </Text>
+          </TouchableOpacity>
     </SafeAreaView>
   );
 }

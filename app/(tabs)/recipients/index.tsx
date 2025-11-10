@@ -126,7 +126,9 @@ export default function Recipients() {
           <View className="flex-row items-center">
             <SearchIcon size={20} />
           </View>
-          <Text className="text-[#00000033] font-regular text-2xl  ml-2">|</Text>
+          <Text className="text-[#00000033] font-regular text-2xl  ml-2">
+            |
+          </Text>
           <TextInput
             placeholder="Search"
             placeholderTextColor="#6B6B6B"
@@ -151,24 +153,25 @@ export default function Recipients() {
       </View>
 
       {/* Add recipient */}
-      <View
-        className="mx-6 mt-8 flex-row items-center justify-center rounded-2xl py-4"
+      <TouchableOpacity
+        className="mx-8 mt-8 flex-row items-center justify-center rounded-3xl py-2"
         style={{
-          borderColor: "#CCA884",
+          borderColor: "#CCA88499",
           borderWidth: 1,
-          backgroundColor: "#F9F7F4",
+          backgroundColor: "#CCA88443",
         }}
       >
-        <Feather
-          name="user-plus"
-          size={22}
-          color="black"
-          style={{ marginRight: 10 }}
-        />
-        <Text className="font-semibold text-[16px] text-black">
+        <View
+          className="w-12 h-12 rounded-full  items-center justify-center "
+          style={{ backgroundColor: c.brown }}
+        >
+          <Feather name="user-plus" size={25} color="black" />
+        </View>
+
+        <Text className="font-semibold text-xl text-black px-12 ">
           Add a recipient
         </Text>
-      </View>
+      </TouchableOpacity>
 
       {/* Active Filter */}
       <View className="flex-row justify-between items-center px-6 mt-6">
@@ -198,14 +201,14 @@ export default function Recipients() {
         ListFooterComponent={
           <View className="mt-8 mb-12 items-center">
             <TouchableOpacity
-              className="rounded-2xl px-6 py-3"
+              className="rounded-2xl px-20  py-3"
               style={{
                 borderColor: "#CCA884",
                 borderWidth: 1,
-                backgroundColor: "#F9F7F4",
+                backgroundColor: "#CCA88453",
               }}
             >
-              <Text className="font-semibold text-black">
+              <Text className="font-medium text-lg text-black">
                 Sync Mobile Contacts
               </Text>
             </TouchableOpacity>

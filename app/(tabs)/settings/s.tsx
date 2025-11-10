@@ -1,28 +1,23 @@
 // app/(tabs)/settings/index.tsx
 // Settings screen based on the provided Figma design
 import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import ProfileIcon from '@/assets/icons/settings/ProfileIcon'; // تأكد من المسار الصحيح
-import RecipientIcon from '@/assets/icons/settings/RecipientIcon'; // تأكد من المسار الصحيح
-import WalletIcon from '@/assets/icons/settings/WalletIcon'; // تأكد من المسار الصحيح
-import CloseIcon from '@/assets/icons/settings/CloseIcon'; // تأكد من المسار الصحيح
-import GlobeIcon from '@/assets/icons/settings/GlobeIcon'; // تأكد من المسار الصحيح
+import ProfileIcon from "@/assets/icons/settings/ProfileIcon"; // تأكد من المسار الصحيح
+import RecipientIcon from "@/assets/icons/settings/RecipientIcon"; // تأكد من المسار الصحيح
+import WalletIcon from "@/assets/icons/settings/WalletIcon"; // تأكد من المسار الصحيح
+import CloseIcon from "@/assets/icons/settings/CloseIcon"; // تأكد من المسار الصحيح
+import GlobeIcon from "@/assets/icons/settings/GlobeIcon"; // تأكد من المسار الصحيح
 
 // Colour palette matching the existing screens
 const c = {
-  bg: "#FFFFFF",           // screen background
+  bg: "#FFFFFF", // screen background
   sectionDivider: "#E5E7EB", // light divider for section titles
-  cardBg: "#E0E0E033",        // background for each settings row
-  iconBg: "#CCA88459",        // background behind icons
-  primary: "#CCA884",       // primary brand colour used in other screens
+  cardBg: "#E0E0E033", // background for each settings row
+  iconBg: "#CCA88459", // background behind icons
+  primary: "#CCA884", // primary brand colour used in other screens
 };
 
 // Reusable row component for each settings option
@@ -85,19 +80,19 @@ export default function Settings() {
         </View>
         <SettingsRow
           title="Personal Details"
-          icon={<ProfileIcon   size={30}   />}
-          onPress={() => router.push("/pages/setting/personalpage")}
+          icon={<ProfileIcon size={30} />}
+          onPress={() => router.push("/pages/settings/personalpage")}
           // onPress={() => router.push("/")}
         />
-         
-         <SettingsRow
+
+        <SettingsRow
           title="Privacy & Security"
-          icon={<RecipientIcon/>}
+          icon={<RecipientIcon />}
           // onPress={() => router.push("/settings/privacy-security")}
         />
         <SettingsRow
           title="Payment Methods"
-          icon={<WalletIcon    />}
+          icon={<WalletIcon />}
           // onPress={() => router.push("/settings/payment-methods")}
         />
 
@@ -113,12 +108,7 @@ export default function Settings() {
         </View>
         <SettingsRow
           title="Delete Account"
-          icon={
-            <CloseIcon
-               
-              size={30}
-             />
-          }
+          icon={<CloseIcon size={30} />}
           // onPress={() => router.push("/settings/delete-account")}
         />
 
@@ -132,7 +122,7 @@ export default function Settings() {
         </View>
         <SettingsRow
           title="Language"
-          icon={<GlobeIcon  size={30}   />}
+          icon={<GlobeIcon size={30} />}
           // onPress={() => router.push("/settings/language")}
         />
       </ScrollView>

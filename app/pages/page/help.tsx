@@ -1,17 +1,18 @@
+import CustomPinIcon from "@/components/pages/Exchangerates";
+import SearchIcon from "@/components/ui/SearchIcon";
+import { Feather, Ionicons } from "@expo/vector-icons";
+import axios from "axios";
+import { useRouter } from "expo-router";
 import React, { useEffect, useState } from "react";
 import {
-  View,
+  ActivityIndicator,
+  ScrollView,
   Text,
   TextInput,
   TouchableOpacity,
-  ScrollView,
-  ActivityIndicator,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Feather, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
-import axios from "axios";
-import { useRouter } from "expo-router";
-import SearchIcon from "@/components/ui/SearchIcon";
 
 // Transaction item data type
 interface TransactionItem {
@@ -77,35 +78,55 @@ export default function HelpCenter() {
       id: 1,
       label: "Exchange rates",
       icon: (
-        <MaterialCommunityIcons
-          name="swap-horizontal-bold"
-          size={20}
-          color="#231F20"
-        />
+        <CustomPinIcon name="swap-horizontal-bold" size={3} color="#231F20" />
       ),
       route: "/help/exchange",
     },
     {
       id: 2,
       label: "Verification & Setup",
-      icon: <Ionicons name="scan-outline" size={22} color="#231F20" />,
+      icon: [
+        <Ionicons name="person" size={36} color="#CCA889" />,
+        <Ionicons
+          name="scan-outline"
+          size={28}
+          color="#000"
+          style={{ position: "absolute" }}
+        />,
+      ],
+
       route: "/help/verification",
     },
     {
       id: 3,
       label: "Failed Transactions",
-      icon: <Feather name="x-circle" size={22} color="#231F20" />,
+      icon: <Feather name="x" size={36} color="#000" />,
       route: "/help/failed",
     },
+    // {
+    //   id: 3,
+    //   label: "Failed Transactions",
+    //   icon: [
+    //     <Ionicons
+    //       name="scan-outline"
+    //       size={26}
+    //       color="#000"
+    //       style={{ position: "absolute" }}
+    //     />,
+    //     <Ionicons name="person" size={36} color="#CCA889" />,
+    //   ],
+    //   route: "/help/failed",
+    // },
   ];
 
   return (
     <SafeAreaView className="flex-1 bg-white">
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View className="px-6 pt-5 pb-10">
+        <View className="px-6 pt-5 justify-center pb-10">
           {/* Close / Back Button */}
           <TouchableOpacity
             onPress={() => router.back()}
+            // onPress={() => router.push("/(tabs)/home/h")}
             className="mb-6 w-8 h-8 items-center justify-center"
           >
             {/* Using two rotated lines to mimic the Figma X icon */}
@@ -130,7 +151,7 @@ export default function HelpCenter() {
           </TouchableOpacity>
 
           {/* Heading */}
-          <Text className="text-[32px] font-bold text-black mb-5">
+          <Text className="text-4xl font-medium text-black mb-5">
             How can we help?
           </Text>
 
@@ -139,10 +160,8 @@ export default function HelpCenter() {
             className="flex-row items-center rounded-2xl mb-6 px-4 py-3"
             style={{ borderWidth: 2, borderColor: "#CCA884" }}
           >
-            <View
-              className="w-7 h-7 rounded-full items-center justify-center"
-             >
-               <SearchIcon size={24} />
+            <View className="w-7 h-7 rounded-full items-center justify-center">
+              <SearchIcon size={24} />
             </View>
             <TextInput
               placeholder="Search FAQ and other common problems"
@@ -150,7 +169,6 @@ export default function HelpCenter() {
               className="flex-1 ml-3 text-black text-base"
             />
           </View>
- 
 
           {/* Recent Problems */}
           <Text className="text-[16px] font-medium text-black mb-2">
@@ -238,18 +256,39 @@ export default function HelpCenter() {
             </TouchableOpacity>
           ))}
 
-          {/* Contact Support Button */}
+          {/* <View className="flex-1 mb-9" />
+
+          <View className="w-full h-[1px] justify-items-end  bg-gray-700 mb-6" />
+
+
           <TouchableOpacity
             // onPress={() => router.push("/help/contact-support")}
             className="mt-6 rounded-3xl px-4 py-4 items-center justify-center"
-            style={{ backgroundColor: "#CCA884" }}
+            style={{ backgroundColor: "#CCA88499" }}
           >
             <Text className="text-[16px] font-medium text-black">
               Contact Support
             </Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </ScrollView>
+
+      {/* Spacer */}
+      <View className="flex-1 mb-2" />
+<View className="px-6" >
+      {/* Divider */}
+      <View className="w-full h-[1px] justify-items-end  bg-gray-700 mb-4" />
+
+      {/* Contact Support Button */}
+      <TouchableOpacity
+        // onPress={() => router.push("/help/contact-support")}
+        className="mt-6 rounded-3xl px-4 py-4 mb-8 items-center justify-center"
+        style={{ backgroundColor: "#CCA88499" }}
+      >
+        <Text className="text-[16px] font-medium text-black">
+          Contact Support
+        </Text>
+      </TouchableOpacity></View>
     </SafeAreaView>
   );
 }

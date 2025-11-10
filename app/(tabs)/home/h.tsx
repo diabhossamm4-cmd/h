@@ -1,21 +1,21 @@
 // Dashboard.tsx
+import CustomIcon from "@/components/CustomIcon";
+import BagIcon from "@/components/ui/profile/bill";
+import SearchIcon from "@/components/ui/SearchIcon";
+import { Feather } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import React from "react";
 import {
-  View,
+  Dimensions,
+  FlatList,
+  Image,
   Text,
   TextInput,
   TouchableOpacity,
-  FlatList,
-  Dimensions,
+  View,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import Carousel from "react-native-reanimated-carousel";
-import SearchIcon from "@/components/ui/SearchIcon";
-import CustomIcon from "@/components/CustomIcon";
-import BagIcon from "@/components/ui/profile/bill";
-import { useRouter } from "expo-router";
-import { Image } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const { width } = Dimensions.get("window");
 
@@ -132,7 +132,7 @@ const TransactionRow = ({ tx }: any) => (
   </View>
 );
 const cardImages = [
-  require("@/assets/images/jau.png"),
+  // require("@/assets/images/jau.png"),
   require("@/assets/images/Back.png"),
   // require("@/assets/images/jau.png"),
 ];
@@ -182,7 +182,7 @@ export default function Dashboard() {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push("/pages/page/help")}>
             <View className="rounded-full px-2 py-[4px] flex-row items-center">
               <CustomIcon />
             </View>
@@ -247,15 +247,16 @@ export default function Dashboard() {
                 Introducing Jaudi
               </Text>
 
-              <Carousel
+              <Carousel 
                 width={width}
-                height={270}
-                // autoPlay
+                height={260}
+                autoPlay={true}
+                // loop={false}
                 data={cardImages}
-                scrollAnimationDuration={5000}
+                scrollAnimationDuration={9000}
                 renderItem={({ item }) => (
                   <View
-                    className="mx-4 mt-2 rounded-3xl overflow-hidden"
+                    className="items-center justify-center mt-2 rounded-xl overflow-hidden"
                     style={{
                       shadowColor: "#000",
                       shadowOpacity: 0.1,
@@ -265,13 +266,16 @@ export default function Dashboard() {
                     }}
                   >
                     <Image
+                    
                       source={item}
+                      
                       style={{
                         width: "100%",
-                        height: 250,
+                        height: 240,
                         resizeMode: "cover",
                         borderRadius: 24,
                       }}
+                      
                     />
                   </View>
                 )}

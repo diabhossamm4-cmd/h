@@ -128,7 +128,7 @@ export default function BusinessAddress() {
           <View className="flex-1 mb-9" />
 
           {/* Divider */}
-          <View className="w-full h-[0.5px] bg-gray-700 mb-6" />
+          <View className="w-full h-[1px] bg-gray-700 mb-6" />
 
           {/* Next Button */}
           <TouchableOpacity
